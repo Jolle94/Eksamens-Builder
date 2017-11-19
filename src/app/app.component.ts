@@ -10,5 +10,5 @@ import {ProductService} from './product.service';
 
 
 export class AppComponent {
-  title = 'app';
+  title = 'something';
 }

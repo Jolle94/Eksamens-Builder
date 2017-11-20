@@ -2,10 +2,12 @@ import {Component} from '@angular/core';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 @Component({
-    selector: 'app-root',  
+    selector: 'stepper',  
     template: `
-      <h2>bum</h2>                                        
+      <h2>bum</h2>                                       
       `
   })
 
-export class StepperComponent { }
+export class StepperComponent {
+
+ }

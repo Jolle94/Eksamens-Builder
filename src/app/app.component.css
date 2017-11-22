@@ -1,3 +1,9 @@
-.productscomponents{
-    float: right;
+
+.col-md-4{
+
+}
+
+div .btn-lg{
+    align-items: center;
+    text-align: center;
 }

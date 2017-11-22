@@ -3,32 +3,27 @@
   <h1>
     Choose you {{title}}
   </h1>
-
 </div>
+<br><br>
 
-<section>
-  <article>
-      <img class="gallery" src="{{imageUrl}}"/>
-      <img class="gallery" src="{{imageUrl2}}" style="padding-left:194px;margin-top:-575px;float:left;overflow:auto;"/>
-      <img class="gallery" src="{{imageUrl3}}" style="padding-left:290px;margin-top:-580px;float:left;overflow:auto;"/>
-      <img class="gallery" src="{{imageUrl4}}" style="padding-left:230px;margin-top:-600px;float:left;overflow:auto;"/>
+<div class="row">
+    <div class="col-md-8">  
+        <img class="gallery" src="{{bikeimages[0]}}"/>
+        <img class="gallery" src="{{bikeimages[1]}}" style="padding-left:194px;margin-top:-571px;float:left;overflow:auto;"/>
+        <img class="gallery" src="{{bikeimages[2]}}" style="padding-left:290px;margin-top:-580px;float:left;overflow:auto;"/>
+        <img class="gallery" src="{{bikeimages[3]}}" style="padding-left:230px;margin-top:-600px;float:left;overflow:auto;"/>
 
-    <h2>color</h2>
-      <p>massa ut lorem iaculis vestibulum. Maecenas facilisis elit sed justo.</p>
-      <p>massa ut lorem iaculis vestibulum. Maecenas facilisis elit sed justo.</p>
-    <div>
-      <button
-        class="btn btn-primary btn-lg"
-        [class.disabled]="!isValid">Submit</button>
+    
     </div>
-  
-  </article>
-</section>
+    <div class="col-md-4">
+        <aside>
+          <products></products>
+        </aside>
+    </div>
+ </div>
 
-<section>
-  <products></products>
-</section>
 
-<footer>
-<h2>footer</h2>
-</footer>
+
+<!--something-->
+<app-stepper></app-stepper>
+

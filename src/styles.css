@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+products ul li{
+    list-style-type: none;
+}
+
+.gallery{
+
+    }
+aside{
+    margin:2em;
+    border: 2px solid;
+    background-color: #ffffff;
+    box-shadow: #717171 1px 1px 15px 4px;
+    min-height: 550px;
+}
+

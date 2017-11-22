@@ -1,0 +1,71 @@
+
+<mat-horizontal-stepper [linear]="isLinear">
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Color</ng-template>
+        <div class="text-center">
+        <button class="btn btn-info btn-lg" mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Frame</ng-template>
+      <div class="text-center">
+        <button class="btn btn-info btn-lg" mat-button matStepperPrevious>Back</button>
+        <button class="btn btn-info btn-lg" mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Drive Train</ng-template>
+        <div class="text-center">
+          <button class="btn btn-info btn-lg" mat-button matStepperPrevious>Back</button>
+          <button class="btn btn-info btn-lg" mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Saddle</ng-template>
+          <div class="text-center">
+            <button class="btn btn-info btn-lg" mat-button matStepperPrevious>Back</button>
+            <button class="btn btn-info btn-lg" mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="secondFormGroup">
+          <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Accessories</ng-template>
+            <div class="text-center">
+              <button class="btn btn-info btn-lg" mat-button matStepperPrevious>Back</button>
+              <button class="btn btn-info btn-lg" mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+              <ng-template matStepLabel>Gadgets</ng-template>
+              <div class="text-center">
+                <button class="btn btn-info btn-lg" mat-button matStepperPrevious>Back</button>
+                <button class="btn btn-info btn-lg" mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+
+
+  <mat-step [stepControl]="secondFormGroup">
+    <ng-template matStepLabel>Done</ng-template>
+    <div class="text-center">
+        You are now done and ready to check out.<br>
+      <button class="btn btn-info btn-lg" mat-button matStepperPrevious>Back</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
+

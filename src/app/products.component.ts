@@ -16,7 +16,7 @@ import { ImagesService } from './images.service';
 
 <img *ngFor="let image of images" src="{{image}}">
     
-
+<router-outlet></router-outlet> 
 
 `
 })

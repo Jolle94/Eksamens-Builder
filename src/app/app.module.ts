@@ -17,11 +17,6 @@ import { StepperComponent } from './stepper/stepper.component';
 import { ColorComponent } from './color/color.component';
 import { FrameComponent } from './frame/frame.component';
 import { routing } from './app.routing';
-<<<<<<< Updated upstream
-
-import { routing } from './app.routing';
-=======
->>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -37,15 +32,7 @@ import { routing } from './app.routing';
 
     HttpModule,
     MatStepperModule,MatFormFieldModule,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    routing,
-=======
     routing
->>>>>>> Stashed changes
-=======
-    routing
->>>>>>> Stashed changes
   ],
    //providers: [ProductService],
   providers: [],

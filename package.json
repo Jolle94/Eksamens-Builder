@@ -28,6 +28,7 @@
     "angular-aria": "^1.6.6",
     "angular-material": "^1.1.5",
     "angular-messages": "^1.6.6",
+    "angular-route": "^1.6.6",
     "core-js": "^2.5.1",
     "mdi": "^2.0.46",
     "rxjs": "^5.5.2",

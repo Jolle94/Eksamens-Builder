@@ -13,10 +13,11 @@ import { ImagesService } from './images.service';
 
 export class AppComponent {
   isValid = true;
-  title = 'something';
+  title = 'Bike';
   bikeimages; 
   constructor(bikeimagesservice:ImagesService) {
     this.bikeimages=bikeimagesservice.getBikeImages();
    }
+   
 }
  

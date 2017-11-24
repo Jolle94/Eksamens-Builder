@@ -1,27 +1,47 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ImagesService} from '../images.service';
+import {forEach} from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-color',
   templateUrl: './color.component.html',
   styleUrls: ['./color.component.css'],
-  providers:[ImagesService],
-  template:
-  `
-  <img *ngFor="let image of images" src="{{image}}">
-  `
+  providers: [ImagesService]
+
 })
 
 export class ColorComponent implements OnInit {
-  constructor() { }
+  currentImage;
+  images;
+  @Input('bike') bikeColour;
+  @Output('colorvalue') colorValue = new EventEmitter();
+  test = 0;
 
-  ngOnInit() {
+  constructor( imagesService: ImagesService) {
+      this.images = imagesService.getColorArray();
   }
 
-  public currentImage;
-  
-  public setImage = (image) => {  
-    if (this.currentImage === image) return;
+  ngOnInit() {
+      this.colorValue.emit(this.test);
+  }
+
+
+    colourSwitch(value: number): number {
+
+        for (let i = 0; i < this.images.length; i++) {
+                if (value === i) {
+                   this.test = value;
+                   this.colorValue.emit(this.test);
+                    console.log(value);
+                    return value;
+                }
+            }
+
+
+    }
+
+  public setImage = (image) => {
+    if (this.currentImage === image) { return; }
     this.currentImage = image;
   }
 }

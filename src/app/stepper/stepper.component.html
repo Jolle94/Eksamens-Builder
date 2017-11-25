@@ -6,11 +6,12 @@
         <div class="text-center">
 
 
-            <div>
-                <h2>Pick your Color</h2>
+            <div >
+                <aside id="logo">
+                    <h2>Pick your Color</h2>
+                    <app-color (colorvalue)="ColorChangedHandler($event)"> </app-color>
+                </aside>
 
-
-                <app-color (colorvalue)="ColorChangedHandler($event)"> </app-color>
             </div>
 
 
@@ -48,6 +49,12 @@
       <form [formGroup]="secondFormGroup">
         <ng-template matStepLabel>Drive Train</ng-template>
         <div class="text-center">
+            <div>
+                <h2>Pick your Drive Train</h2>
+
+
+                <app-color (colorvalue)="ColorChangedHandler($event)"> </app-color>
+            </div>
           <button class="btn btn-info btn-lg" mat-button matStepperPrevious>Back</button>
           <button class="btn btn-info btn-lg" mat-button matStepperNext>Next</button>
         </div>
@@ -58,6 +65,12 @@
         <form [formGroup]="secondFormGroup">
           <ng-template matStepLabel>Saddle</ng-template>
           <div class="text-center">
+              <div>
+                  <h2>Pick your Saddle</h2>
+
+
+                  <app-color (colorvalue)="ColorChangedHandler($event)"> </app-color>
+              </div>
             <button class="btn btn-info btn-lg" mat-button matStepperPrevious>Back</button>
             <button class="btn btn-info btn-lg" mat-button matStepperNext>Next</button>
           </div>
@@ -68,6 +81,12 @@
           <form [formGroup]="secondFormGroup">
             <ng-template matStepLabel>Accessories</ng-template>
             <div class="text-center">
+                <div>
+                    <h2>Pick your Accessories</h2>
+
+
+                    <app-color (colorvalue)="ColorChangedHandler($event)"> </app-color>
+                </div>
               <button class="btn btn-info btn-lg" mat-button matStepperPrevious>Back</button>
               <button class="btn btn-info btn-lg" mat-button matStepperNext>Next</button>
             </div>

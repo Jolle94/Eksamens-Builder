@@ -8,39 +8,51 @@ import {Frame} from './models/frame';
     selector: 'products',
     styleUrls: ['./product.component.css'],
     providers: [ImagesService],
-    template: `<h2>Pick your color</h2>
+    template: `
+
+        <div class="row">
+
+        <div class="row" style="text-align: center;">
+            <div class="col-md-8">
+                <img class="gallery" src="{{frameimage}}" style="padding-left:195px;" />
+                <img class="gallery" src="{{bikeimages[0]}}" style="margin-top:-511px;overflow:auto;"/>
+                <img class="gallery" src="{{bikeimages[2]}}" style="padding-left:290px;margin-top:-580px;float:left;overflow:auto;"/>
+                <img class="gallery" src="{{bikeimages[3]}}" style="padding-left:230px;margin-top:-600px;float:left;overflow:auto;"/>
 
 
+            </div>
 
-        <app-color (colorvalue)="ColorChangedHandler($event)"> </app-color>
+            <app-stepper (colorvalue)="ColorChangedHandler($event)" style="margin: auto"></app-stepper>
 
-
-         <h1> {{colorchosen}}</h1>
-
-        <router-outlet></router-outlet>
-
-`
-})
+        </div>
+        </div>
+    `})
 
 export class ProductsComponent  implements OnInit {
-    products;
+
     images;
+    bikeimages;
+    frameColor;
 
-    colorchosen = 0;
-
-    @Output('colorvalue') colorValue = new EventEmitter();
-
-    ngOnInit() {
-        this.colorValue.emit(this.colorchosen);
-    }
+    frameimage;
 
     ColorChangedHandler(color: number) {
-        this.colorchosen = color;
-        this.colorValue.emit(this.colorchosen);
+        for (let i = 0; i < this.frameColor.length; i++) {
+            if (color === i) {
+
+                this.frameimage = this.frameColor[i];
+            }
+        }
     }
-    constructor(productService: ProductService, imagesService: ImagesService) {
-        this.products = productService.getProducts();
+    ngOnInit() {
+    }
+
+
+    constructor( imagesService: ImagesService) {
+
         this.images = imagesService.getColorArray();
+        this.frameColor = imagesService.getFrameColor();
+        this.bikeimages = imagesService.getBikeImages();
     }
  }
 

@@ -1,9 +1,20 @@
-
+<div  style="align-self: center">
 <mat-horizontal-stepper [linear]="isLinear">
   <mat-step [stepControl]="firstFormGroup">
     <form [formGroup]="firstFormGroup">
       <ng-template matStepLabel>Color</ng-template>
         <div class="text-center">
+
+
+            <div>
+                <h2>Pick your Color</h2>
+
+
+                <app-color (colorvalue)="ColorChangedHandler($event)"> </app-color>
+            </div>
+
+
+
             <a routerLink="/frame">
              <button class="btn btn-info btn-lg" mat-button matStepperNext>Next</button>
             </a>
@@ -15,7 +26,19 @@
     <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel>Frame</ng-template>
       <div class="text-center">
+          <div>
+              <h2>Pick your Frame</h2>
+
+
+              <app-color (colorvalue)="ColorChangedHandler($event)"> </app-color>
+          </div>
+
+
         <button class="btn btn-info btn-lg" mat-button matStepperPrevious>Back</button>
+
+
+
+
         <button class="btn btn-info btn-lg" mat-button matStepperNext>Next</button>
       </div>
     </form>
@@ -71,3 +94,4 @@
   </mat-step>
 </mat-horizontal-stepper>
 
+</div>

@@ -1,0 +1,9 @@
+.logo {
+    position: absolute; // Reposition logo from the natural layout
+left: 50px;
+    top: 50px;
+    width: 350px;
+    height: 100px;
+    z-index: 2;
+    margin-left: 1000px;
+}

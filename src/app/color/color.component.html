@@ -1,22 +1,5 @@
-<div *ngFor=>
-    <img class="gallery" src="{{imageUrl[0]}}"/>
-    <img class="gallery" src="{{imageUrl[1]}}"/>
-    <img class="gallery" src="{{imageUrl[2]}}"/>
-    <img class="gallery" src="{{imageUrl[3]}}"/>
-    <img class="gallery" src="{{imageUrl[4]}}"/>
-    <img class="gallery" src="{{imageUrl[5]}}"/>
-    <img class="gallery" src="{{imageUrl[6]}}"/>
-    <img class="gallery" src="{{imageUrl[7]}}"/>
-    <img class="gallery" src="{{imageUrl[8]}}"/>
-</div>
-
-<li *ngFor="let image of images" (click)="setImage(image)">  
-        </li>  
-        <img [src]="{{bikeimages[2]}}" />  
 
 
-        <div *ngIf="currentImage">  
-                <img [src]="{{framecolor[2]}}" />
-              </div> 
 
-          
+<input type="image"  *ngFor="let image of images; let i = index " src="{{image}}" (click)="colourSwitch(i)">
+

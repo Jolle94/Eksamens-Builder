@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
@@ -11,16 +11,26 @@ export class StepperComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-  
+    colorchosen = 0;
+    @Input('bike') bike;
+    @Output('colorvalue') colorValue = new EventEmitter();
+
   constructor(private _formBuilder: FormBuilder) { }
 
+
   ngOnInit() {
+      this.colorValue.emit(this.colorchosen);
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
     });
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
     });
+    console.log(this.bike.frame.colour);
   }
 
+    ColorChangedHandler(color: number) {
+        this.colorchosen = color;
+        this.colorValue.emit(this.colorchosen);
+    }
 }

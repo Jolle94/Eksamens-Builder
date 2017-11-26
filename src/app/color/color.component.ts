@@ -11,9 +11,9 @@ import {forEach} from '@angular/router/src/utils/collection';
 })
 
 export class ColorComponent implements OnInit {
-  currentImage;
+
   images;
-  @Input('bike') bikeColour;
+
   @Output('colorvalue') colorValue = new EventEmitter();
   test = 0;
 
@@ -40,8 +40,5 @@ export class ColorComponent implements OnInit {
 
     }
 
-  public setImage = (image) => {
-    if (this.currentImage === image) { return; }
-    this.currentImage = image;
-  }
+
 }

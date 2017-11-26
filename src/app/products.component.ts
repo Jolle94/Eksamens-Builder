@@ -14,7 +14,7 @@ import {Frame} from './models/frame';
 
         <div class="row" style="text-align: center;">
             <div class="col-md-8">
-                <img class="gallery" src="{{frameimage}}" style="padding-left:195px;" />
+                <img class="gallery" src="{{bike.frame.colour}}" style="padding-left:195px;" />
                 <img class="gallery" src="{{bikeimages[0]}}" style="margin-top:-511px;overflow:auto;"/>
                 <img class="gallery" src="{{bikeimages[2]}}" style="padding-left:290px;margin-top:-580px;float:left;overflow:auto;"/>
                 <img class="gallery" src="{{bikeimages[3]}}" style="padding-left:230px;margin-top:-600px;float:left;overflow:auto;"/>
@@ -24,7 +24,21 @@ import {Frame} from './models/frame';
 
             <app-stepper (colorvalue)="ColorChangedHandler($event)" style="margin: auto"></app-stepper>
 
+
         </div>
+
+
+
+        </div>
+
+        <div style="text-align: center;">
+        <div class="text-center">
+            <aside >
+                <h2>Your Choices</h2>
+                <label> Frame Colour: {{bike.frame.colourText}}</label>
+            </aside>
+        </div>
+
         </div>
     `})
 
@@ -33,14 +47,19 @@ export class ProductsComponent  implements OnInit {
     images;
     bikeimages;
     frameColor;
+    bike: Bike;
 
-    frameimage;
+
 
     ColorChangedHandler(color: number) {
         for (let i = 0; i < this.frameColor.length; i++) {
             if (color === i) {
 
-                this.frameimage = this.frameColor[i];
+
+                this.bike = {
+                        frame: {colour: this.frameColor[i].colour,
+                        colourText: this.frameColor[i].colourText}
+                        };
             }
         }
     }

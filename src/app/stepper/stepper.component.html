@@ -7,7 +7,7 @@
 
 
             <div >
-                <aside id="logo">
+                <aside class="logo">
                     <h2>Pick your Color</h2>
                     <app-color (colorvalue)="ColorChangedHandler($event)"> </app-color>
                 </aside>
@@ -27,11 +27,13 @@
     <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel>Frame</ng-template>
       <div class="text-center">
-          <div>
+
+          <div >
+              <aside class="logo">
               <h2>Pick your Frame</h2>
 
+          </aside>
 
-              <app-color (colorvalue)="ColorChangedHandler($event)"> </app-color>
           </div>
 
 
@@ -49,11 +51,13 @@
       <form [formGroup]="secondFormGroup">
         <ng-template matStepLabel>Drive Train</ng-template>
         <div class="text-center">
-            <div>
-                <h2>Pick your Drive Train</h2>
 
+            <div >
+                <aside class="logo">
+                    <h2>Pick your Drivetrain</h2>
 
-                <app-color (colorvalue)="ColorChangedHandler($event)"> </app-color>
+                </aside>
+
             </div>
           <button class="btn btn-info btn-lg" mat-button matStepperPrevious>Back</button>
           <button class="btn btn-info btn-lg" mat-button matStepperNext>Next</button>
@@ -65,11 +69,12 @@
         <form [formGroup]="secondFormGroup">
           <ng-template matStepLabel>Saddle</ng-template>
           <div class="text-center">
-              <div>
-                  <h2>Pick your Saddle</h2>
+              <div >
+                  <aside class="logo">
+                      <h2>Pick your Saddle</h2>
 
+                  </aside>
 
-                  <app-color (colorvalue)="ColorChangedHandler($event)"> </app-color>
               </div>
             <button class="btn btn-info btn-lg" mat-button matStepperPrevious>Back</button>
             <button class="btn btn-info btn-lg" mat-button matStepperNext>Next</button>
@@ -81,11 +86,12 @@
           <form [formGroup]="secondFormGroup">
             <ng-template matStepLabel>Accessories</ng-template>
             <div class="text-center">
-                <div>
-                    <h2>Pick your Accessories</h2>
+                <div >
+                    <aside class="logo">
+                        <h2>Pick your Accessories</h2>
 
+                    </aside>
 
-                    <app-color (colorvalue)="ColorChangedHandler($event)"> </app-color>
                 </div>
               <button class="btn btn-info btn-lg" mat-button matStepperPrevious>Back</button>
               <button class="btn btn-info btn-lg" mat-button matStepperNext>Next</button>
@@ -97,6 +103,15 @@
             <form [formGroup]="secondFormGroup">
               <ng-template matStepLabel>Gadgets</ng-template>
               <div class="text-center">
+
+                  <div >
+                      <aside class="logo">
+                          <h2>Pick your Gadgets</h2>
+
+                      </aside>
+
+                  </div>
+
                 <button class="btn btn-info btn-lg" mat-button matStepperPrevious>Back</button>
                 <button class="btn btn-info btn-lg" mat-button matStepperNext>Next</button>
               </div>
@@ -107,7 +122,8 @@
   <mat-step [stepControl]="secondFormGroup">
     <ng-template matStepLabel>Done</ng-template>
     <div class="text-center">
-        You are now done and ready to check out.<br>
+
+
       <button class="btn btn-info btn-lg" mat-button matStepperPrevious>Back</button>
     </div>
   </mat-step>

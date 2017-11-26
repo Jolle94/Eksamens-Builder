@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
@@ -12,7 +12,9 @@ export class StepperComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
     colorchosen = 0;
+
     @Output('colorvalue') colorValue = new EventEmitter();
+
   constructor(private _formBuilder: FormBuilder) { }
 
 

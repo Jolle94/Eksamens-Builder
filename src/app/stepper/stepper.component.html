@@ -122,7 +122,13 @@
   <mat-step [stepControl]="secondFormGroup">
     <ng-template matStepLabel>Done</ng-template>
     <div class="text-center">
+        <div >
+            <aside class="logo">
+                <h2>your Choices</h2>
+                {{bike.frame.colourText}}
+            </aside>
 
+        </div>
 
       <button class="btn btn-info btn-lg" mat-button matStepperPrevious>Back</button>
     </div>

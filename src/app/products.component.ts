@@ -22,7 +22,7 @@ import {Frame} from './models/frame';
 
             </div>
 
-            <app-stepper (colorvalue)="ColorChangedHandler($event)" style="margin: auto"></app-stepper>
+            <app-stepper [bike]="bike" (colorvalue)="ColorChangedHandler($event)" style="margin: auto"></app-stepper>
 
 
         </div>

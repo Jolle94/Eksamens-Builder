@@ -12,7 +12,7 @@ export class StepperComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
     colorchosen = 0;
-
+    @Input('bike') bike;
     @Output('colorvalue') colorValue = new EventEmitter();
 
   constructor(private _formBuilder: FormBuilder) { }

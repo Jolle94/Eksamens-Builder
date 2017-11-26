@@ -31,15 +31,9 @@ import {Frame} from './models/frame';
 
         </div>
 
-        <div style="text-align: center;">
-        <div class="text-center">
-            <aside >
-                <h2>Your Choices</h2>
-                <label> Frame Colour: {{bike.frame.colourText}}</label>
-            </aside>
-        </div>
 
-        </div>
+
+
     `})
 
 export class ProductsComponent  implements OnInit {
@@ -64,6 +58,7 @@ export class ProductsComponent  implements OnInit {
         }
     }
     ngOnInit() {
+        this.bike = { frame: {colour: this.frameColor[0].colour, colourText:  this.frameColor[0].colourText}};
     }
 
 

@@ -26,6 +26,7 @@ export class StepperComponent implements OnInit {
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
     });
+    console.log(this.bike.frame.colour);
   }
 
     ColorChangedHandler(color: number) {

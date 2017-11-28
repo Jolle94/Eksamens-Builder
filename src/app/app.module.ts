@@ -17,22 +17,32 @@ import { StepperComponent } from './stepper/stepper.component';
 import { ColorComponent } from './color/color.component';
 import { FrameComponent } from './frame/frame.component';
 import { routing } from './app.routing';
+import {AngularFireModule} from "angularfire2";
 
+export const firebaseConfig = {
+    apiKey: 'AIzaSyCcj0oUNt9nUU3-g_eMv6f1qAuUFSJSg14',
+    authDomain: 'jose-bikebuiler.firebaseapp.com',
+    databaseURL: 'https://jose-bikebuiler.firebaseio.com',
+    projectId: 'jose-bikebuiler',
+    storageBucket: 'jose-bikebuiler.appspot.com',
+    messagingSenderId: '657052964055'
+};
 @NgModule({
   declarations: [
     AppComponent, ProductsComponent, StepperComponent, ColorComponent, FrameComponent
   ],
   imports: [
-    BrowserModule,BrowserAnimationsModule,
+    BrowserModule, BrowserAnimationsModule,
       // Include it under 'imports' in your application module
     // after BrowserModule.
-  
+
     HttpClientModule,
-    FormsModule,ReactiveFormsModule,
+    FormsModule, ReactiveFormsModule,
 
     HttpModule,
-    MatStepperModule,MatFormFieldModule,
-    routing
+    MatStepperModule, MatFormFieldModule,
+    routing,
+      AngularFireModule.initializeApp(firebaseConfig)
   ],
    //providers: [ProductService],
   providers: [],

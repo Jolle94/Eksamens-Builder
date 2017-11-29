@@ -44,7 +44,7 @@ export class ProductsComponent  implements OnInit {
 
     bike: Bike;
     firebaseTest;
-    frames;
+    frames = [];
     i1;
     i2;
     i3;

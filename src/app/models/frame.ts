@@ -1,4 +1,4 @@
 export class Frame {
-    colour: string;
+    urlColour: string;
     colourText: string;
 }

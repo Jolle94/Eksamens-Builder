@@ -7,6 +7,7 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+
 // Import HttpClientModule from @angular/common/http
 import {HttpClientModule} from '@angular/common/http';
 
@@ -17,7 +18,8 @@ import { StepperComponent } from './stepper/stepper.component';
 import { ColorComponent } from './color/color.component';
 import { FrameComponent } from './frame/frame.component';
 import { routing } from './app.routing';
-import {AngularFireModule} from "angularfire2";
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireDatabase} from 'angularfire2/database';
 
 export const firebaseConfig = {
     apiKey: 'AIzaSyCcj0oUNt9nUU3-g_eMv6f1qAuUFSJSg14',
@@ -44,8 +46,8 @@ export const firebaseConfig = {
     routing,
       AngularFireModule.initializeApp(firebaseConfig)
   ],
-   //providers: [ProductService],
-  providers: [],
+
+  providers: [AngularFireDatabase],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

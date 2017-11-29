@@ -12,13 +12,15 @@ import {forEach} from '@angular/router/src/utils/collection';
 
 export class ColorComponent implements OnInit {
 
-  images;
-
+  testframes;
+  firebaseColour;
   @Output('colorvalue') colorValue = new EventEmitter();
   test = 0;
 
   constructor( imagesService: ImagesService) {
-      this.images = imagesService.getColorArray();
+
+      this.testframes = imagesService.getFrameColorFirebase();
+      this.firebaseColour = imagesService.getColoursFirebase();
   }
 
   ngOnInit() {
@@ -28,17 +30,15 @@ export class ColorComponent implements OnInit {
 
     colourSwitch(value: number): number {
 
-        for (let i = 0; i < this.images.length; i++) {
-                if (value === i) {
-                   this.test = value;
-                   this.colorValue.emit(this.test);
-                    console.log(value);
-                    return value;
-                }
-            }
+                this.test = value;
+                this.colorValue.emit(value);
+                console.log(value);
+                return value;
 
 
-    }
+
+  }
+
 
 
 }

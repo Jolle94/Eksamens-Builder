@@ -1,5 +1,6 @@
 
 
 
-<input type="image"  *ngFor="let image of images; let i = index " src="{{image}}" (click)="colourSwitch(i)">
+<input type="image"  *ngFor="let image of firebaseColour  | async; let i = index" src="{{image['urlColour']}}" (click)="colourSwitch(i)">
+
 

@@ -12,7 +12,7 @@ export class ImagesService {
     frames: Observable<any[]>;
     colours: Observable<any[]>;
     constructor(private db: AngularFireDatabase) {
-        this.frames = db.list('frames').valueChanges();
+        this.frames = this.db.list('frames').valueChanges();
         this.colours = db.list('colours').valueChanges();
     }
 
@@ -39,11 +39,16 @@ export class ImagesService {
     ];
   }
 
+
   getColoursFirebase() {
+
         return this.colours;
   }
   getFrameColorFirebase() {
-        return this.frames;
+        return this.frames.map(changes => {
+            return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
+        });
+
   }
 
 }

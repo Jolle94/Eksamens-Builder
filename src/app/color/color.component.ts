@@ -12,15 +12,18 @@ import {forEach} from '@angular/router/src/utils/collection';
 
 export class ColorComponent implements OnInit {
 
-  testframes;
+
   firebaseColour;
+  testFrames;
   @Output('colorvalue') colorValue = new EventEmitter();
 
 
   constructor( imagesService: ImagesService) {
 
-      this.testframes = imagesService.getFrameColorFirebase();
+
       this.firebaseColour = imagesService.getColoursFirebase();
+      this.testFrames = imagesService.getFrameColorFirebase();
+
   }
 
   ngOnInit() {

@@ -15,7 +15,7 @@ export class ColorComponent implements OnInit {
   testframes;
   firebaseColour;
   @Output('colorvalue') colorValue = new EventEmitter();
-  test = 0;
+
 
   constructor( imagesService: ImagesService) {
 
@@ -24,13 +24,13 @@ export class ColorComponent implements OnInit {
   }
 
   ngOnInit() {
-      this.colorValue.emit(this.test);
+
   }
 
 
     colourSwitch(value: number): number {
 
-                this.test = value;
+
                 this.colorValue.emit(value);
                 console.log(value);
                 return value;

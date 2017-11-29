@@ -14,11 +14,11 @@ import {Frame} from './models/frame';
 
             <div class="row" style="text-align: center;">
                 <div class="col-md-8">
-                    <img class="gallery" src="{{bike.frame.urlColour}}" style="padding-left:195px;"/>
-                    <img class="gallery" src="{{bikeimages[0]}}" style="margin-top:-511px;overflow:auto;"/>
-                    <img class="gallery" src="{{bikeimages[2]}}"
+                    <img class="gallery" src="{{bike?.frame.urlColour}}" style="padding-left:195px;"/>
+                    <img class="gallery" src="{{i1}}" style="margin-top:-511px;overflow:auto;"/>
+                    <img class="gallery" src="{{i2}}"
                          style="padding-left:290px;margin-top:-580px;float:left;overflow:auto;"/>
-                    <img class="gallery" src="{{bikeimages[3]}}"
+                    <img class="gallery" src="{{i3}}"
                          style="padding-left:230px;margin-top:-600px;float:left;overflow:auto;"/>
 
 
@@ -40,36 +40,56 @@ import {Frame} from './models/frame';
 
 export class ProductsComponent  implements OnInit {
 
-
     bikeimages;
-    frameColor;
+
     bike: Bike;
-   firebaseTest;
-
-
+    firebaseTest;
+    frames;
+    i1;
+    i2;
+    i3;
     ColorChangedHandler(color: number) {
-        for (let i = 0; i < this.frameColor.length; i++) {
+
+
+        for (let i = 0; i < this.frames.length; i++) {
             if (color === i) {
-
-
-                this.bike = {
-                        frame: {urlColour: this.frameColor[i].urlColour,
-                        colourText: this.frameColor[i].colourText}
-                        };
+                this.bike = { frame: {urlColour: this.frames[i]['urlColour'], colourText: this.frames[i]['textColour']}};
             }
         }
+
+
     }
+
     ngOnInit() {
-        this.bike = { frame: {urlColour: this.frameColor[0].urlColour, colourText:  this.frameColor[0].colourText}};
+
+        this.firebaseTest.subscribe(res => {
+            this.frames = res;
+            this.bike = { frame: {urlColour: res[0]['urlColour'], colourText: res[0]['textColour']}};
+
+        });
+
+        this.bikeimages.subscribe(res => {
+
+            this.i1 = res[0]['url'];
+            this.i2 = res[2]['url'];
+            this.i3 = res[3]['url'];
+        });
+
+
+
     }
 
 
-    constructor( imagesService: ImagesService) {
+constructor( imagesService: ImagesService) {
 
 
-        this.frameColor = imagesService.getFrameColor();
-        this.bikeimages = imagesService.getBikeImages();
-        this.firebaseTest = imagesService.getFrameColorFirebase();
-    }
- }
+    this.bikeimages = imagesService.getBikeImages();
+    this.firebaseTest = imagesService.getFrameColorFirebase();
+
+
+
+}
+}
+
+
 

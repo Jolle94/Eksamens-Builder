@@ -14,7 +14,8 @@ export class ColorComponent implements OnInit {
 
 
   firebaseColour;
-  testFrames;
+
+  colours;
   @Output('colorvalue') colorValue = new EventEmitter();
 
 
@@ -22,12 +23,13 @@ export class ColorComponent implements OnInit {
 
 
       this.firebaseColour = imagesService.getColoursFirebase();
-      this.testFrames = imagesService.getFrameColorFirebase();
+
 
   }
 
   ngOnInit() {
 
+   this.firebaseColour.subscribe(res => { this.colours = res;  });
   }
 
 

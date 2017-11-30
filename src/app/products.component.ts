@@ -79,23 +79,23 @@ export class ProductsComponent  implements OnInit {
     ngOnInit() {
 
 
-        this.firebaseFramesColor.subscribe(res => {
-            this.frames = res;
-            this.defaultBikeFrameColor = {urlColour: res[0]['urlColour'], colourText: res[0]['textColour']};
+        this.firebaseFramesColor.subscribe(framesData => {
+            this.frames = framesData;
+            this.defaultBikeFrameColor = {urlColour: framesData[0]['urlColour'], colourText: framesData[0]['textColour']};
 
         });
-        this.firebaseDriveTrainPictures.subscribe(res => {
-            this.dirvetrains = res;
-            this.defaultBikeDrivetrain = res[0]['url'];
-            this.defaultDrivetrainType = res[0]['text'];
+        this.firebaseDriveTrainPictures.subscribe(drivetrainData => {
+            this.dirvetrains = drivetrainData;
+            this.defaultBikeDrivetrain = drivetrainData[0]['url'];
+            this.defaultDrivetrainType = drivetrainData[0]['text'];
 
         });
-        this.bikeimages.subscribe(res => {
+        this.bikeimages.subscribe(defaultBikeData => {
 
-            this.defaultBikeDrivetrain = res[0]['url'];
-            this.defaultBikeSeat = res[2]['url'];
-            this.defaultBikeHandle = res[3]['url'];
-            this.bike = { frame: {urlColour: res[1]['url'], colourText: res[1]['textColour']}, drivetrain: res[0]['url'], drivetrainType: ''};
+            this.defaultBikeDrivetrain = defaultBikeData[0]['url'];
+            this.defaultBikeSeat = defaultBikeData[2]['url'];
+            this.defaultBikeHandle = defaultBikeData[3]['url'];
+            this.bike = { frame: {urlColour: defaultBikeData[1]['url'], colourText: defaultBikeData[1]['textColour']}, drivetrain: defaultBikeData[0]['url'], drivetrainType: ''};
 
         });
 

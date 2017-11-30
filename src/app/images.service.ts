@@ -14,15 +14,17 @@ export class ImagesService {
     bikes: AngularFireList<any>;
     drivetrains: AngularFireList<any>;
     constructor(private db: AngularFireDatabase) {
-
-
+        this.bikes = this.db.list('bikeImages');
+        this.colours = this.db.list('colours');
+        this.frames = this.db.list('frames');
+        this.drivetrains = this.db.list('driveetrain');
     }
 
 
 
 
   getBikeImages() {
-     this.bikes = this.db.list('bikeImages');
+
      return this.bikes.snapshotChanges().map(changes => {
           return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
       });
@@ -32,14 +34,14 @@ export class ImagesService {
 
 
   getColoursFirebase() {
-      this.colours = this.db.list('colours');
+
         return this.colours.snapshotChanges().map(changes => {
             return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
         });
 
   }
   getFrameColorFirebase() {
-      this.frames = this.db.list('frames');
+
         return this.frames.snapshotChanges().map(changes => {
             return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
         });
@@ -48,7 +50,7 @@ export class ImagesService {
 
   getDriveTrainsFirebase()
   {
-      this.drivetrains = this.db.list('driveetrain');
+
       return this.drivetrains.snapshotChanges().map(changes => {
           return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
       });

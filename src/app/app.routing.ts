@@ -7,10 +7,12 @@ import { ProductService } from './product.service';
 import { StepperComponent } from './stepper/stepper.component';
 import { ColorComponent } from './color/color.component';
 import { FrameComponent } from './frame/frame.component';
+import { DrivetrainComponent } from './drivetrain/drivetrain.component';
 
 export const routing = RouterModule.forRoot([
     {path: 'color', component: ColorComponent},
     {path: 'frame', component: FrameComponent},
+    {path: 'drivetrain', component: DrivetrainComponent},
 
 ]);
 

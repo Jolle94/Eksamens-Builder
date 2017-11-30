@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ImagesService} from '../images.service';
+import { ProductsComponent } from '../products.component';
+import {ProductService} from '../product.service';
 
 @Component({
   selector: 'app-color',

@@ -15,8 +15,12 @@
     <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel>Frame</ng-template>
       <div class="text-center">
-        <button class="btn btn-info btn-lg" mat-button matStepperPrevious>Back</button>
-        <button class="btn btn-info btn-lg" mat-button matStepperNext>Next</button>
+          <a routerLink="/color">
+            <button class="btn btn-info btn-lg" mat-button matStepperPrevious>Back</button>
+          </a>
+          <a routerLink="/drivetrain">
+            <button class="btn btn-info btn-lg" mat-button matStepperNext>Next</button>
+          </a>
       </div>
     </form>
   </mat-step>
@@ -25,8 +29,10 @@
       <form [formGroup]="secondFormGroup">
         <ng-template matStepLabel>Drive Train</ng-template>
         <div class="text-center">
-          <button class="btn btn-info btn-lg" mat-button matStepperPrevious>Back</button>
-          <button class="btn btn-info btn-lg" mat-button matStepperNext>Next</button>
+          <a routerLink="/frame">
+            <button class="btn btn-info btn-lg" mat-button matStepperPrevious>Back</button>
+          </a>
+            <button class="btn btn-info btn-lg" mat-button matStepperNext>Next</button>
         </div>
       </form>
     </mat-step>
@@ -70,4 +76,3 @@
     </div>
   </mat-step>
 </mat-horizontal-stepper>
-

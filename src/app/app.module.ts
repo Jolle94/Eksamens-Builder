@@ -17,10 +17,11 @@ import { StepperComponent } from './stepper/stepper.component';
 import { ColorComponent } from './color/color.component';
 import { FrameComponent } from './frame/frame.component';
 import { routing } from './app.routing';
+import { DrivetrainComponent } from './drivetrain/drivetrain.component';
 
 @NgModule({
   declarations: [
-    AppComponent, ProductsComponent, StepperComponent, ColorComponent, FrameComponent
+    AppComponent, ProductsComponent, StepperComponent, ColorComponent, FrameComponent, DrivetrainComponent
   ],
   imports: [
     BrowserModule,BrowserAnimationsModule,

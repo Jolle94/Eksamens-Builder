@@ -21,7 +21,10 @@ export class ImagesService {
     }
 
 
+  pushBike(data) {
+        this.db.list('bikes').push(data);
 
+  }
 
   getBikeImages() {
 
@@ -48,8 +51,7 @@ export class ImagesService {
 
   }
 
-  getDriveTrainsFirebase()
-  {
+  getDriveTrainsFirebase() {
 
       return this.drivetrains.snapshotChanges().map(changes => {
           return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));

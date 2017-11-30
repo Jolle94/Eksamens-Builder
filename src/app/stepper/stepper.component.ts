@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ImagesService} from "../images.service";
 
 @Component({
   selector: 'app-stepper',
@@ -17,7 +18,7 @@ export class StepperComponent implements OnInit {
     @Output('colorvalue') colorValue = new EventEmitter();
     @Output('driveTrainvalue') driveTrainValue = new EventEmitter();
 
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(private _formBuilder: FormBuilder, private pushService: ImagesService) { }
 
 
   ngOnInit() {
@@ -32,6 +33,10 @@ export class StepperComponent implements OnInit {
 
   }
 
+  orderBike()
+  {
+      this.pushService.pushBike(this.bike);
+  }
     ColorChangedHandler(color: number) {
         this.colorchosen = color;
         this.colorValue.emit(this.colorchosen);

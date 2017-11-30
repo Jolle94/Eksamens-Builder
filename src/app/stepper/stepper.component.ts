@@ -12,14 +12,17 @@ export class StepperComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
     colorchosen = 0;
+    driveTrainChosen = 0;
     @Input('bike') bike;
     @Output('colorvalue') colorValue = new EventEmitter();
+    @Output('driveTrainvalue') driveTrainValue = new EventEmitter();
 
   constructor(private _formBuilder: FormBuilder) { }
 
 
   ngOnInit() {
       this.colorValue.emit(this.colorchosen);
+      this.driveTrainValue.emit(this.driveTrainChosen);
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
     });
@@ -32,5 +35,10 @@ export class StepperComponent implements OnInit {
     ColorChangedHandler(color: number) {
         this.colorchosen = color;
         this.colorValue.emit(this.colorchosen);
+    }
+
+    DriveTrainChangedHandler(dt: number) {
+        this.driveTrainChosen = dt;
+        this.driveTrainValue.emit(this.driveTrainChosen);
     }
 }

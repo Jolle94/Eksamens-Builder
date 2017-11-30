@@ -20,6 +20,7 @@ import { FrameComponent } from './frame/frame.component';
 import { routing } from './app.routing';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabase} from 'angularfire2/database';
+import { DrivetrainComponent } from './drivetrain/drivetrain.component';
 
 export const firebaseConfig = {
     apiKey: 'AIzaSyCcj0oUNt9nUU3-g_eMv6f1qAuUFSJSg14',
@@ -31,7 +32,7 @@ export const firebaseConfig = {
 };
 @NgModule({
   declarations: [
-    AppComponent, ProductsComponent, StepperComponent, ColorComponent, FrameComponent
+    AppComponent, ProductsComponent, StepperComponent, ColorComponent, FrameComponent, DrivetrainComponent
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule,

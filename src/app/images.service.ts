@@ -12,6 +12,7 @@ export class ImagesService {
     frames: AngularFireList<any>;
     colours: AngularFireList<any>;
     bikes: AngularFireList<any>;
+    drivetrains: AngularFireList<any>;
     constructor(private db: AngularFireDatabase) {
 
 
@@ -45,4 +46,11 @@ export class ImagesService {
 
   }
 
+  getDriveTrainsFirebase()
+  {
+      this.drivetrains = this.db.list('driveetrain');
+      return this.drivetrains.snapshotChanges().map(changes => {
+          return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
+      });
+  }
 }

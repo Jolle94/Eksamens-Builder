@@ -55,7 +55,7 @@
             <div >
                 <aside class="logo">
                     <h2>Pick your Drivetrain</h2>
-
+                    <app-drivetrain (driveTrainValue)="DriveTrainChangedHandler($event)"> </app-drivetrain>
                 </aside>
 
             </div>
@@ -126,6 +126,7 @@
             <aside class="logo">
                 <h2>your Choices</h2>
                 <label>Your frame colour: {{bike?.frame.colourText}}</label>
+                <label>Your Drivetrain: {{bike?.drivetrainType}}</label>
             </aside>
 
         </div>
